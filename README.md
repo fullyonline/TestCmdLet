@@ -2,6 +2,8 @@
 
 all commands are executet on the cmd
 
+Needs .Net core installed
+
 ## new classlib
 
 ```
