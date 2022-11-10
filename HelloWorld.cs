@@ -6,8 +6,10 @@ namespace TestCmdLet
     [Cmdlet(VerbsCommon.Get, "Greeting")]
     public class HelloWorld: PSCmdlet
     {
-        [Parameter(ValueFromPipeline =true)]
-        public string Name { get; set; }
+        [Parameter(ValueFromPipeline =true,
+            Mandatory = true)]
+        [Alias("N")]
+        public string[] Names { get; set; }
 
         protected override void BeginProcessing()
         {
@@ -16,9 +18,11 @@ namespace TestCmdLet
 
         protected override void ProcessRecord()
         {
-            var whoDat = string.IsNullOrEmpty(Name) ? "World" : Name;
-            var greeting = "Hello " + whoDat;
-
+            var greeting = "Hello";
+            foreach (var name in Names)
+            {
+                greeting += " " + name;
+            }
             WriteObject(greeting);
         }
 
