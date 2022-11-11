@@ -3,11 +3,12 @@ using System.Management.Automation;
 
 namespace TestCmdLet
 {
-    [Cmdlet(VerbsCommon.Get, "Greeting")]
-    public class HelloWorld: PSCmdlet
+        [Cmdlet(VerbsCommon.Get, "Greeting")]
+    public class Greeting: PSCmdlet
     {
         [Parameter(ValueFromPipeline =true,
-            Mandatory = true)]
+            Mandatory = true,
+            HelpMessage = "Enter a name to greet, e.g. Huber")]
         [Alias("N")]
         public string[] Names { get; set; }
 
