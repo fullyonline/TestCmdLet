@@ -3,7 +3,8 @@ using System.Management.Automation;
 
 namespace TestCmdLet
 {
-        [Cmdlet(VerbsCommon.Get, "Greeting")]
+    [Cmdlet(VerbsCommon.Get, "Greeting")]
+    [OutputType(typeof(string))]
     public class Greeting: PSCmdlet
     {
         [Parameter(ValueFromPipeline =true,
