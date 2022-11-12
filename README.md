@@ -7,7 +7,7 @@ Needs .Net core installed
 ## new classlib
 
 ```
-dotnet new classlib –name <Name>
+dotnet new classlib -–name <Name>
 cd <Name>
 ```
 
