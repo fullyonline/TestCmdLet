@@ -15,7 +15,7 @@ namespace TestCmdLet
 
         protected override void BeginProcessing()
         {
-            WriteVerbose("Begin!");
+            base.BeginProcessing();
         }
 
         protected override void ProcessRecord()
@@ -30,12 +30,12 @@ namespace TestCmdLet
 
         protected override void StopProcessing()
         {
-            WriteVerbose("StopProcessing!");
+            base.StopProcessing();
         }
 
         protected override void EndProcessing()
         {
-            WriteVerbose("End!");
+            base.EndProcessing();
         }
     }
 }
