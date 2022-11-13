@@ -13,11 +13,6 @@ namespace TestCmdLet
         [Alias("N")]
         public string[] Names { get; set; }
 
-        protected override void BeginProcessing()
-        {
-            base.BeginProcessing();
-        }
-
         protected override void ProcessRecord()
         {
             var greeting = "Hello";
@@ -37,6 +32,11 @@ namespace TestCmdLet
         {
             base.EndProcessing();
         }
+        protected override void BeginProcessing()
+        {
+            base.BeginProcessing();
+        }
+
     }
 }
 
